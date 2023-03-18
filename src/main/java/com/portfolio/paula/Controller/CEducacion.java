@@ -53,10 +53,10 @@ public class CEducacion {
     
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
+        /*if(StringUtils.isBlank(dtoeducacion.getNombreE())){
         } else {
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }
+        }*/
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
@@ -77,9 +77,9 @@ public class CEducacion {
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE()) && sEducacion.getByNombreE(dtoeducacion.getNombreE()).get().getId() != id){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
-        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
+        /*if(StringUtils.iBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El campo no puede estar vacio"), HttpStatus.BAD_REQUEST);
-        }
+        }*/
         
         Educacion educacion = sEducacion.getOne(id).get();
         
