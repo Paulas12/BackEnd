@@ -4,7 +4,7 @@ package com.portfolio.paula.Security.Controller;
 import com.portfolio.paula.Controller.Mensaje;
 import com.portfolio.paula.Security.Dto.JwtDto;
 import com.portfolio.paula.Security.Dto.LoginUsuario;
-import com.portfolio.paula.Security.Dto.nuevoUsuario;
+import com.portfolio.paula.Security.Dto.NuevoUsuario;
 import com.portfolio.paula.Security.Entity.Rol;
 import com.portfolio.paula.Security.Entity.Usuario;
 import com.portfolio.paula.Security.Enums.RolNombre;
@@ -46,7 +46,7 @@ public class AuthController {
     JwtProvider jwtProvider;
     
     @PostMapping("/nuevo")
-    public ResponseEntity<?> nuevo(@Valid @RequestBody nuevoUsuario nuevoUsuario, BindingResult bindingResult){
+    public ResponseEntity<?> nuevo(@Valid @RequestBody NuevoUsuario nuevoUsuario, BindingResult bindingResult){
         if(bindingResult.hasErrors())
             return new ResponseEntity(new Mensaje("Campos incorrectos o email inválido"),HttpStatus.BAD_REQUEST);
         

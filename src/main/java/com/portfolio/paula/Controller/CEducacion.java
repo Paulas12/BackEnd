@@ -2,10 +2,10 @@
 package com.portfolio.paula.Controller;
 
 import Dto.dtoEducacion;
-import antlr.StringUtils;
 import com.portfolio.paula.Entity.Educacion;
 import com.portfolio.paula.Service.Seducacion;
 import java.util.List;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -53,10 +53,9 @@ public class CEducacion {
     
     @PostMapping("/create")
     public ResponseEntity<?> create(@RequestBody dtoEducacion dtoeducacion){
-        /*if(StringUtils.isBlank(dtoeducacion.getNombreE())){
-        } else {
+        if(StringUtils.isBlank(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
-        }*/
+        }
         if(sEducacion.existsByNombreE(dtoeducacion.getNombreE())){
             return new ResponseEntity(new Mensaje("Ese nombre ya existe"), HttpStatus.BAD_REQUEST);
         }
