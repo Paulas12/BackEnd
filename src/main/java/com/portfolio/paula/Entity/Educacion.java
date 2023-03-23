@@ -1,23 +1,34 @@
 
 package com.portfolio.paula.Entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+
 
 @Entity
 public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    
+    @NotNull
+    @Column(name = "nombre_e")
     private String nombreE; 
+    
+    @NotNull
+    @Column(name = "descripcion_e")
     private String descripcionE; 
+    
     
     public Educacion() {
         
     }
 
+    
     public Educacion(String nombreE, String descripcionE) {
         this.nombreE = nombreE;
         this.descripcionE = descripcionE;

@@ -1,5 +1,5 @@
 
-package Dto;
+package com.portfolio.paula.Dto;
 
 import javax.validation.constraints.NotBlank;
 
