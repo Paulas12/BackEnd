@@ -1,10 +1,9 @@
-package com.portfolio.paul.Security;
+package com.portfolio.paula.Security;
 
 import com.portfolio.paula.Security.Service.UserDetailsImpl;
 import com.portfolio.paula.Security.jwt.JwtEntryPoint;
 import com.portfolio.paula.Security.jwt.JwtTokenFilter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -18,10 +17,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
-
 @Configuration
-@EnableAutoConfiguration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MainSecurity extends WebSecurityConfigurerAdapter{
@@ -69,7 +65,4 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
        auth.userDetailsService(userDetailsServicesImpl).passwordEncoder(passwordEncoder());
     }
-    
-    
-    
 }

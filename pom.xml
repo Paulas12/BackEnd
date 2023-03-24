@@ -9,9 +9,9 @@
         <relativePath/>
     </parent>
     <groupId>com.portfolio</groupId>
-    <artifactId>paula</artifactId>
+    <artifactId>mariquena</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>paula</name>
+    <name>mariquena allosa</name>
     <description>Portfolio Argentina Programa</description>
     <properties>
         <java.version>1.8</java.version>
