@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/skills")
-@CrossOrigin(origins= "https://mariquena-allosa.web.app")
+@CrossOrigin(origins= "https://localhost:4200")
 public class CSkills  {
     @Autowired
     SSkills sSkills;

@@ -1,10 +1,9 @@
+
 package com.portfolio.paula.Dto;
 
 import javax.validation.constraints.NotBlank;
-import lombok.Getter;
-import lombok.Setter;
 
-@Getter @Setter
+
 public class dtoProyectos {
     @NotBlank
     private String titulo;
@@ -31,5 +30,4 @@ public class dtoProyectos {
         this.repoUrl = repoUrl;
     }
 
-    
 }

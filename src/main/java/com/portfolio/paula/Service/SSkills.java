@@ -22,14 +22,14 @@ public class SSkills {
         return rSkills.findAll();
     }
 
-    //Buscar id
+    //Buscar por id
     public Optional<Skills> getOne(int id){
         return rSkills.findById(id);
     }
     
     //Buscar nombreEd
-    public Optional<Skills> getByNombreSkill(String nombreSkill){
-        return rSkills.findByNombreSkill(nombreSkill);
+    public Optional<Skills> getByNombreS(String nombreS){
+        return rSkills.findByNombreS(nombreS);
     }
     
     //Guardar 
@@ -41,19 +41,15 @@ public class SSkills {
     public void delete(int id){
         rSkills.deleteById(id);
     }
-
     
     //Existe id
     public boolean existsById(int id){
         return rSkills.existsById(id);
     }
 
-    
     //Existe nombre
-    public boolean existsByNombreSkill(String nombreSkill){
-        return rSkills.existsByNombreSkill(nombreSkill);
+    public boolean existsByNombreS(String nombreS){
+        return rSkills.existsByNombreS(nombreS);
     }
-
-   
 }
 

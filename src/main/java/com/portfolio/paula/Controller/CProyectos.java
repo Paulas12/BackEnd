@@ -1,12 +1,10 @@
 
 package com.portfolio.paula.Controller;
 
-import com.portfolio.paula.Dto.dtoProyectos;
 import com.portfolio.paula.Entity.Proyectos;
 import com.portfolio.paula.Security.Controller.Mensaje;
 import com.portfolio.paula.Service.SProyectos;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/proyectos")
-@CrossOrigin
+@CrossOrigin(origins= "https://localhost:4200")
 public class CProyectos {
     @Autowired
     SProyectos sProyectos;
@@ -35,8 +33,6 @@ public class CProyectos {
         List<Proyectos> list = sProyectos.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-    
-    
     
     
     @GetMapping("/detail/{id}")
