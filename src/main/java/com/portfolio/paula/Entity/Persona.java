@@ -12,10 +12,6 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
-
-
 @Getter @Setter
 @Entity
 public class Persona implements Serializable{
@@ -62,6 +58,5 @@ public class Persona implements Serializable{
         this.about = about;
         this.photoUrl = photoUrl;
     }
-    
-    
+
 }

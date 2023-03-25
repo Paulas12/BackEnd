@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@CrossOrigin(origins="https://mariquena-allosa.web.app")
+@CrossOrigin
 public class PersonaController {
     @Autowired IPersonaService ipersonaService;
     
-    
-    
    //Declarando métodos 
-    //Pide 
-    
+    //Pide    
     @GetMapping("personas/traer")
     public List<Persona> getPersona(){
         return ipersonaService.getPersona();
@@ -36,8 +33,6 @@ public class PersonaController {
         return "La persona fue creada con éxito";
     }
     
-    
-    
     //Borrar persona
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/personas/borrar/{id}")
@@ -46,9 +41,6 @@ public class PersonaController {
         return "La persona fue eliminada con éxito";
     }
     
-    
-    
-    //Editar persona
     //URL:PUERTO/personas/editar
     @PutMapping("/personas/update")
     public String editPersona(@RequestBody Persona persona){
@@ -56,9 +48,5 @@ public class PersonaController {
         ipersonaService.savePersona(persona);
         return "Actualizado los datos";
     }
-    
-    //@GetMapping("/personas/traer/perfil")
-   // public Persona findPersona(){
-     //return ipersonaService.findPersona((long)1);
-    //}
+
 }

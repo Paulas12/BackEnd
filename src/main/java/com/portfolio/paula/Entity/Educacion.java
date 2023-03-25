@@ -9,8 +9,6 @@ import javax.persistence.Id;
 import lombok.Getter;
 import lombok.Setter;
 
-
-
 @Getter @Setter
 @Entity
 public class Educacion implements Serializable {
@@ -23,13 +21,11 @@ public class Educacion implements Serializable {
 
     private String institucion;
     
-    
     @Column(name="fecha_ingreso")
     private int fechaIngreso;
     
     @Column(name="fecha_final")
     private int fechaFinal;
-    
     
     @Column (name="descripcion_ed")    
     private String descripcionEd;
@@ -37,7 +33,6 @@ public class Educacion implements Serializable {
     @Column (name="img_url")
     private String imgUrl;
 
-    
     public Educacion() {
     }
 
@@ -48,7 +43,6 @@ public class Educacion implements Serializable {
         this.fechaFinal = fechaFinal;
         this.descripcionEd = descripcionEd;
         this.imgUrl = imgUrl;
-        
     }
 
     public Educacion(int id, String tituloEd, String institucion, int fechaIngreso,int fechaFinal, String descripcionEd,String imgUrl) {
