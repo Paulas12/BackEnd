@@ -19,22 +19,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/skills")
-@CrossOrigin(origins= "https://mariquena-allosa.web.app")
+@CrossOrigin(origins= "https://portfolio-frontend-7e94e.web.app/")
 public class CSkills  {
     @Autowired
     SSkills sSkills;
 
-    
-    //Traer
+
     @GetMapping("/lista")
     public ResponseEntity<List<Skills>> list() {
         List<Skills> list = sSkills.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-    
-    
-    
-    
+
     @GetMapping("/detail/{id}")
     public ResponseEntity<Skills> getById(@PathVariable("id")int id){
         if(!sSkills.existsById(id)){
@@ -44,7 +40,6 @@ public class CSkills  {
         Skills skills = sSkills.getOne(id).get();
         return new ResponseEntity(skills, HttpStatus.OK);
     }
-    //Borrar
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> delete(@PathVariable("id") int id) {
@@ -54,15 +49,13 @@ public class CSkills  {
         return new ResponseEntity(new Mensaje("Habilidad cargada"), HttpStatus.OK);
     }
 
-// Crear
 
     @PostMapping("/create")
     public void create(@RequestBody Skills skills){
         sSkills.save(skills);
     }
 
- 
-    //Actualizar
+
     @PutMapping("/update/{id}")
     public void update(@RequestBody Skills skills) {
         sSkills.save(skills);  

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/educacion")
-@CrossOrigin(origins= "https://localhost:4200")
+@CrossOrigin(origins= "https://portfolio-frontend-7e94e.web.app/")
 public class CEducacion {
     @Autowired
     SEducacion sEducacion;
@@ -31,8 +31,6 @@ public class CEducacion {
         List<Educacion> list = sEducacion.list();
         return new ResponseEntity<>(list, HttpStatus.OK);
     }
-    
-    
     
     
     @GetMapping("/detail/{id}")
