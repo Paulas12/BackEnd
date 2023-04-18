@@ -10,7 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebConfig implements WebMvcConfigurer{
     public void addCorsMapping(CorsRegistry registry){
-        registry.addMapping("/**");
+        registry.addMapping("https://portfolio-frontend-7e94e.web.app/");
     }
     
 }
